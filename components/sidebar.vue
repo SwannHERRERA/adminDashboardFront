@@ -52,7 +52,13 @@ export default {
     logout() {
       Cookie.remove('auth')
       this.$store.commit('setAuth', null)
-      axios.post('http://localhost:8003/admins/me/logout')
+      const config = {
+        headers: {
+          Authorization: `Bearer ${this.$store.state.auth}`
+        }
+      }
+
+      axios.post('http://localhost:8003/admins/me/logout', config)
       this.$router.push('/')
     }
   }
