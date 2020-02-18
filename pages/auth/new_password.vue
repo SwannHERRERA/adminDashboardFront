@@ -31,6 +31,7 @@ import myInput from '@/components/myInput.vue'
 
 export default {
   layout: 'auth',
+  middleware: 'notAuthenticated',
   components: {
     myInput
   }

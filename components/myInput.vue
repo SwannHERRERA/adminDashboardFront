@@ -9,7 +9,8 @@
       :type="type"
       :name="name"
       :placeholder="placeholder"
-      :v-model="value"
+      :value="value"
+      @input="$emit('input', $event.target.value)"
     />
   </div>
 </template>
@@ -27,7 +28,8 @@ export default {
     },
     name: {
       type: String,
-      required: true
+      required: false,
+      default: ''
     },
     placeholder: {
       type: String,

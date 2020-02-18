@@ -1,13 +1,7 @@
 <template>
   <div>
     <div v-if="$store.state.auth">
-      <p>
-        You are authenticated. You can see the
-        <NuxtLink to="/secret"> secret page </NuxtLink>!
-      </p>
-      <button @click="logout">
-        Logout
-      </button>
+      <p>You are on the Admin page</p>
     </div>
     <p v-else>
       Please
