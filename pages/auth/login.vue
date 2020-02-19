@@ -84,7 +84,7 @@ export default {
     postLogin() {
       return axios({
         method: 'post',
-        url: 'http://localhost:8003/admins/login',
+        url: '/api/admins/login',
         data: {
           email: this.email,
           password: this.password

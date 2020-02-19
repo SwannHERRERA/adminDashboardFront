@@ -25,6 +25,10 @@ export default {
    */
   css: [],
   /*
+   ** Middleware
+   */
+  middleware: [],
+  /*
    ** Plugins to load before mounting the App
    */
   plugins: [],
@@ -43,8 +47,23 @@ export default {
   modules: [
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/axios'
   ],
+
+  /*
+   ** axios conf
+   */
+  axios: {
+    proxy: true // Can be also an object with default options
+  },
+  /*
+   ** Proxy conf
+   */
+  proxy: {
+    '/api/': { target: 'http://localhost:8003', pathRewrite: { '^/api/': '' } }
+  },
+  transpile: ['vee-validate/dist/rules'],
   /*
    ** Build configuration
    */

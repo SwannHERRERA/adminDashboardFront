@@ -5,7 +5,7 @@
     </div>
     <p v-else>
       Please
-      <NuxtLink to="/login"> login </NuxtLink>.
+      <button @click="logout">logout</button>.
     </p>
   </div>
 </template>

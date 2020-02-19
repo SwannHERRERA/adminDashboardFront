@@ -6,5 +6,6 @@
       quisquam molestiae sint sed, dolorum iusto, voluptate voluptatibus
       repellendus quos quod!
     </p>
+    <nuxt-link to="/auth/login">login</nuxt-link>
   </div>
 </template>

@@ -9,31 +9,31 @@
     </div>
 
     <div
-      class="w-0 md:w-full h-0 md:h-screen overflow-y-hidden bg-white shadow-lg"
+      class="w-0 md:w-full h-0 md:h-screen overflow-y-hidden bg-blue-900 shadow-lg"
     >
       <div
         class="w-full h-screen antialiased flex flex-col hover:cursor-pointer"
       >
         <a
-          class="hover:bg-gray-300 bg-gray-200 border-t-2 p-3 w-full text-xl text-left text-gray-600 font-semibold"
+          class="hover:bg-blue-300 bg-blue-200 border-t-2 p-3 w-full text-xl text-left text-blue-600 font-semibold"
           href=""
           ><i
-            class="fa fa-comment text-gray-600 text-2xl pr-1 pt-1 float-right"
+            class="fa fa-comment text-blue-600 text-2xl pr-1 pt-1 float-right"
           ></i
           >Messages</a
         >
         <a
-          class="hover:bg-gray-300 bg-gray-200 border-t-2 p-3 w-full text-xl text-left text-gray-600 font-semibold"
+          class="hover:bg-blue-300 bg-blue-200 border-t-2 p-3 w-full text-xl text-left text-blue-600 font-semibold"
           href=""
-          ><i class="fa fa-cog text-gray-600 text-2xl pr-1 pt-1 float-right"></i
+          ><i class="fa fa-cog text-blue-600 text-2xl pr-1 pt-1 float-right"></i
           >Settings</a
         >
         <button
-          class="hover:bg-gray-300 bg-gray-200 border-t-2 p-3 w-full text-xl text-left text-gray-600 font-semibold"
+          class="hover:bg-blue-300 bg-blue-200 border-t-2 p-3 w-full text-xl text-left text-blue-600 font-semibold"
           @click="logout"
         >
           <i
-            class="fa fa-arrow-left text-gray-600 text-2xl pr-1 pt-1 float-right"
+            class="fa fa-arrow-left text-blue-600 text-2xl pr-1 pt-1 float-right"
           ></i
           >Log out
         </button>
@@ -52,13 +52,7 @@ export default {
     logout() {
       Cookie.remove('auth')
       this.$store.commit('setAuth', null)
-      const config = {
-        headers: {
-          Authorization: `Bearer ${this.$store.state.auth}`
-        }
-      }
-
-      axios.post('http://localhost:8003/admins/me/logout', config)
+      axios.post('/api/admins/me/logout')
       this.$router.push('/')
     }
   }
