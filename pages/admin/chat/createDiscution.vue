@@ -23,7 +23,7 @@ export default {
       admins: [
         {
           _id: { $oid: '5e4da7401c9f7a3350edba89' },
-          email: 'h.houis@gmail.com',
+          email: '......@gmail.com',
           password:
             '$2b$08$3JRKnMI4keq5ITY/.Iy/Tes0Dh/tYRLXbqJWNttfZyNGtQrVhZ3jK',
           name: 'Hugo Houis',
